@@ -1,6 +1,3 @@
-import tournament.Match;
-import tournament.Player;
-import tournament.Team;
 
 import java.util.ArrayList;
 
@@ -18,7 +15,7 @@ abstract class Shape {
     abstract public double getPerimeter();
 
     public String toString() {
-        return "Shape[color=" + this.color + ",filled=" + this.filled + "]"
+        return "Shape[color=" + this.color + ",filled=" + this.filled + "]";
     }
 
 
@@ -63,7 +60,7 @@ abstract class Shape {
      };
 
     public String toString() {
-        return "Circle[Shape[color=" + this.color + ",filled=" + this.filled + "],radius="+ this.radius+"]"
+        return "Circle[Shape[color=" + this.color + ",filled=" + this.filled + "],radius="+ this.radius+"]";
     }
 
     public Circle(double radius, String color, boolean filled){
@@ -114,7 +111,7 @@ class Rectangle extends Shape{
 
 
     public String toString() {
-        return "Rectangle[Shape[color=" + this.color + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]"
+        return "Rectangle[Shape[color=" + this.color + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]";
     }
 
     public Rectangle(double width, double length, String color, boolean filled){
@@ -166,7 +163,7 @@ class Square extends Shape{
 
 
     public String toString() {
-        return "Square[Rectangle[Shape[color=" + this.color + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]]"
+        return "Square[Rectangle[Shape[color=" + this.color + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]]";
     }
 
     public Square(double side, String color, boolean filled){
@@ -179,7 +176,7 @@ class Square extends Shape{
     public Square(double side){
         setSide(side);
     }
-    
+
 }
 
 
@@ -187,7 +184,8 @@ class Square extends Shape{
     public class Main {
     public static void main(String[] args) {
 
-
+        Square unCuadrado = new Square(7.0, "red", "yes" );
+        System.out.println(unCuadrado.getArea());
 
     }
 
