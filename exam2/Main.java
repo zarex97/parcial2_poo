@@ -163,12 +163,11 @@ class Square extends Shape{
 
 
     public String toString() {
-        return "Square[Rectangle[Shape[color=" + getColor()  + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]]";
+        return "Square[Rectangle[Shape[color=" + getColor()  + ",filled=" + isFilled() + "],width="+ getWidth()+",length"+getLength()+"]]";
     }
 
     public Square(double side, String color, boolean filled){
         setSide(side);
-        setLength(length);
         setColor(color);
         setFilled(filled);
     }
