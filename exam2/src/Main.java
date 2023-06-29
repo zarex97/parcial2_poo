@@ -38,6 +38,10 @@ abstract class Shape {
         this.filled = filled;
     }
 
+    public Shape(String color, boolean filled){
+        setColor(color);
+        setFilled(filled);
+    }
 }
 
  class Circle extends Shape {
@@ -62,7 +66,15 @@ abstract class Shape {
         return "Circle[Shape[color=" + this.color + ",filled=" + this.filled + "],radius="+ this.radius+"]"
     }
 
+    public Circle(double radius, String color, boolean filled){
+        setRadius(radius);
+        setColor(color);
+        setFilled(filled);
+    }
 
+     public Circle(double radius){
+         setRadius(radius);
+     }
 }
 
 
@@ -105,7 +117,17 @@ class Rectangle extends Shape{
         return "Rectangle[Shape[color=" + this.color + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]"
     }
 
+    public Rectangle(double width, double length, String color, boolean filled){
+        setWidth(width);
+        setLength(length);
+        setColor(color);
+        setFilled(filled);
+    }
 
+    public Rectangle(double width, double length){
+        setWidth(width);
+        setLength(length);
+    }
 
 }
 
@@ -140,18 +162,24 @@ class Square extends Shape{
         return getSide();
     }
 
-    public void setLength(double length) {
-        this.length = length;
-    }
 
 
 
     public String toString() {
-        return "Rectangle[Shape[color=" + this.color + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]"
+        return "Square[Rectangle[Shape[color=" + this.color + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]]"
     }
 
+    public Square(double side, String color, boolean filled){
+        setSide(side);
+        setLength(length);
+        setColor(color);
+        setFilled(filled);
+    }
 
-
+    public Square(double side){
+        setSide(side);
+    }
+    
 }
 
 
