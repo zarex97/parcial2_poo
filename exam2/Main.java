@@ -60,10 +60,10 @@ abstract class Shape {
      };
 
     public String toString() {
-        return "Circle[Shape[color=" + this.color + ",filled=" + this.filled + "],radius="+ this.radius+"]";
+        return "Circle[Shape[color=" + getColor() + ",filled=" + isFilled() + "],radius="+ getRadius()+"]";
     }
 
-    public Circle(double radius, String color, boolean filled){
+    public Circle(double radius, String color, boolean filled) {
         setRadius(radius);
         setColor(color);
         setFilled(filled);
@@ -111,7 +111,7 @@ class Rectangle extends Shape{
 
 
     public String toString() {
-        return "Rectangle[Shape[color=" + this.color + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]";
+        return "Rectangle[Shape[color=" + getColor()  + ",filled=" + isFilled() + "],width="+ getWidth()+",length"+getLength()+"]";
     }
 
     public Rectangle(double width, double length, String color, boolean filled){
@@ -163,7 +163,7 @@ class Square extends Shape{
 
 
     public String toString() {
-        return "Square[Rectangle[Shape[color=" + this.color + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]]";
+        return "Square[Rectangle[Shape[color=" + getColor()  + ",filled=" + this.filled + "],width="+ this.width+",length"+this.length+"]]";
     }
 
     public Square(double side, String color, boolean filled){
