@@ -14,8 +14,10 @@ abstract class Shape {
 
     abstract public double getPerimeter();
 
+    public abstract double getRadius();
+
     public String toString() {
-        return "Shape[color=" + this.color + ",filled=" + this.filled + "]";
+        return "Shape[color=" + getColor() + ",filled=" + isFilled()+ "]";
     }
 
 
@@ -39,6 +41,11 @@ abstract class Shape {
         setColor(color);
         setFilled(filled);
     }
+
+    public Shape(){
+    }
+
+
 }
 
  class Circle extends Shape {
@@ -63,6 +70,8 @@ abstract class Shape {
         return "Circle[Shape[color=" + getColor() + ",filled=" + isFilled() + "],radius="+ getRadius()+"]";
     }
 
+     public Circle() {
+     }
     public Circle(double radius, String color, boolean filled) {
         setRadius(radius);
         setColor(color);
@@ -75,7 +84,7 @@ abstract class Shape {
 }
 
 
-class Rectangle extends Shape{
+ class Rectangle extends Shape{
 
 
 
@@ -106,13 +115,15 @@ class Rectangle extends Shape{
     };
 
     public double getPerimeter() {
-        return (getLength()*2) * (getWidth()*2);
-    };
+        return (getLength()*2) + (getWidth()*2);
+    }
 
+    
 
     public String toString() {
         return "Rectangle[Shape[color=" + getColor()  + ",filled=" + isFilled() + "],width="+ getWidth()+",length"+getLength()+"]";
     }
+    public Rectangle () {};
 
     public Rectangle(double width, double length, String color, boolean filled){
         setWidth(width);
@@ -128,7 +139,7 @@ class Rectangle extends Shape{
 
 }
 
-class Square extends Shape{
+class Square extends Rectangle {
 
 
 
@@ -138,8 +149,17 @@ class Square extends Shape{
 
     private double side;
 
-   // public double getArea();
-    // public double getPerimeter();
+   // public Square(String color, boolean filled) {
+     //   super(color, filled);
+    //}
+
+    //public Square(double side, double length, String color, boolean filled) {
+      //  super(side, length, color, filled);
+    //}
+
+    //public Square(double side) {
+      //  super(side);
+    //}
 
 
     public double getSide() {
@@ -166,6 +186,8 @@ class Square extends Shape{
         return "Square[Rectangle[Shape[color=" + getColor()  + ",filled=" + isFilled() + "],width="+ getWidth()+",length"+getLength()+"]]";
     }
 
+    public Square () {};
+
     public Square(double side, String color, boolean filled){
         setSide(side);
         setColor(color);
@@ -183,8 +205,16 @@ class Square extends Shape{
     public class Main {
     public static void main(String[] args) {
 
-        Square unCuadrado = new Square(7.0, "red", "yes" );
+        Square unCuadrado = new Square(7.0, "red", true );
         System.out.println(unCuadrado.getArea());
+        Shape s1 = new Circle(5.5, "red", false);
+        System.out.println(s1.getRadius());
+        //Shape s2 = new Shape();
+        //s2.setColor("blue");
+        //s2.setFilled(false);
+        Shape s3 = new Rectangle(1.0, 2.0, "red", false);
+        System.out.println(s3.getPerimeter());
+        Shape s4 = new Square(6.6);
 
     }
 
